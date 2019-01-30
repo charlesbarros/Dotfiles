@@ -123,21 +123,21 @@ alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 #   ---------------------------------------
 
 # Android SDK
-export PATH=${PATH}:/Users/charlesbarros/Library/Android/sdk/platform-tools
-export PATH=${PATH}:/Users/charlesbarros/Library/Android/sdk/tools
-export PATH=${PATH}:/Users/charlesbarros/Documents/Shell
+export PATH=${PATH}:˜/Library/Android/sdk/platform-tools
+export PATH=${PATH}:˜/Library/Android/sdk/tools
+export PATH=${PATH}:˜/Documents/Shell
 
 unitylogcat() {
-	if [ "$#" -eq 1 ]; then
-		printf "> Unity Editor Log Cat - Tag: ["$1"]\n\n"
-		tail -f  ~/Library/Logs/Unity/Editor.log | grep --line-buffered '\['$0'\]' | ~/coloredUnityLogcat.py
-	elif [ "$#" -eq 2 ]; then
-		printf "> Unity Editor Log Cat - Grep: "$2"\n\n"
-		tail -f  ~/Library/Logs/Unity/Editor.log | grep $2
-	else
-		printf "> Unity Editor Log Cat\n\n"
-		tail -f  ~/Library/Logs/Unity/Editor.log | ~/coloredUnityLogcat.py
-	fi
+    if [ "$#" -eq 1 ]; then
+        printf "> Unity Editor Log Cat - Tag: ["$1"]\n\n"
+        tail -f  ~/Library/Logs/Unity/Editor.log | grep --line-buffered '\['$0'\]' | ~/coloredUnityLogcat.py
+    elif [ "$#" -eq 2 ]; then
+        printf "> Unity Editor Log Cat - Grep: "$2"\n\n"
+        tail -f  ~/Library/Logs/Unity/Editor.log | grep $2
+    else
+        printf "> Unity Editor Log Cat\n\n"
+        tail -f  ~/Library/Logs/Unity/Editor.log | ~/coloredUnityLogcat.py
+    fi
 }
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
